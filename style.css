@@ -1,0 +1,335 @@
+* {
+	box-sizing: border-box;
+}
+
+/* Overall page setup */
+body {
+	margin: 0;
+}
+
+.dark {
+	background-color: hsl(230, 17%, 14%);
+	color: hsl(0, 0%, 100%);
+}
+
+/* Header */
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 150px;
+	padding-bottom: 130px;
+	border-radius: 0px 0px 20px 20px;
+	background-color: hsl(225, 100%, 98%);
+}
+
+.dark-top {
+	background-color: hsl(232, 19%, 15%);
+}
+
+header h1 {
+	font: 700 1.6em 'Inter', sans-serif;
+	color: hsl(230, 17%, 14%);
+	margin: 5px;
+}
+
+.dark-top h1 {
+	color: hsl(0, 0%, 100%);
+}
+
+header h6 {
+	font: 700 0.8em 'Inter', sans-serif;
+	color: hsl(228, 12%, 44%);
+	margin: 5px;
+}
+
+.dark-top h6 {
+	color: hsl(228, 34%, 66%);
+}
+
+hr {
+	display: none;
+}
+
+.dark-mode {
+	font: 700 0.8em 'Inter', sans-serif;
+	color: hsl(228, 12%, 44%);
+	line-height: 2em;
+	cursor: pointer;
+}
+
+.dark-font.dark-mode:hover {
+	color: hsl(0, 0%, 100%);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 22px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: hsl(230, 22%, 74%);
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.slider:hover {
+	background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  right: 3px;
+  bottom: 3px;
+  border-radius: 50%;
+  background-color: hsl(225, 100%, 98%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+input:checked + .slider:before {
+	background-color: hsl(232, 19%, 15%);
+  -webkit-transform: translateX(-23px);
+  -ms-transform: translateX(-23px);
+  transform: translateX(-23px);
+}
+
+@media screen and (max-width: 375px) {
+	header {
+		flex-direction: column;
+		padding: 20px;
+		padding-bottom: 80px;
+	}
+	hr {
+		display: inline-block;
+		width:100%;
+		margin-left:0;
+		border: 0.5px solid hsl(228, 12%, 44%);
+	}
+	.dark-top hr {
+		border: 0.5px solid hsl(228, 34%, 66%);
+	}
+	.switch {
+		float: right;
+	}
+}
+
+/* Dashboard Cards */
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 20px 150px;
+	margin-top: -120px;
+}
+
+.card {
+	position: relative;
+	cursor: pointer;
+	text-align: center;
+	font: 400 1em 'Inter', sans-serif;
+	font-size: 14px;
+	color: hsl(228, 12%, 44%);
+	background-color: hsl(227, 47%, 96%);
+	min-width: 240px;
+	border-radius: 4px;
+	padding: 20px 50px;
+	margin-bottom: 20px;
+}
+
+.card:hover {
+	background-color: hsl(256, 66%, 94%);
+}
+
+.dark-card {
+	background-color: hsl(228, 28%, 20%);
+	color: hsl(228, 34%, 66%);
+}
+
+.dark-card:hover {
+	background-color: hsl(229, 23%, 39%);
+}
+
+.big-h1 {
+	font-size: 3.5em;
+	color: hsl(230, 17%, 14%);
+	line-height: 0.1;
+}
+
+.dark-card .big-h1 {
+	font-size: 3.5em;
+	color: hsl(0, 0%, 100%);
+	line-height: 0.1;
+}
+
+.fb-border {
+	border-top: 4px solid hsl(203, 89%, 53%);
+}
+
+.tw-border {
+	border-top: 4px solid hsl(195, 100%, 50%);
+}
+
+.instagram-border {
+	border-top: 4px solid transparent;
+    border-radius: 4px;
+}
+
+.card.instagram-border {
+	background: 
+        linear-gradient(to right, hsl(227, 47%, 96%), hsl(227, 47%, 96%)), 
+        linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%)); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.card.instagram-border:hover {
+	background:
+	    linear-gradient(to right, hsl(256, 66%, 94%), hsl(256, 66%, 94%)), 
+        linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.dark-card.instagram-border {
+	background: 
+        linear-gradient(to right, hsl(228, 28%, 20%), hsl(228, 28%, 20%)), 
+        linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%)); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.dark-card.instagram-border:hover {
+	background: 
+        linear-gradient(to right, hsl(229, 23%, 39%), hsl(229, 23%, 39%)), 
+        linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%)); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.youtube-border {
+	border-top: 4px solid hsl(348, 97%, 39%);
+}
+
+.inline {
+	display: inline-flex;
+	line-height: 1.5;
+}
+
+.card img {
+	padding: 2px 5px;
+}
+
+.green {
+	font: 700 0.8em 'Inter', sans-serif;
+	color: hsl(163, 72%, 41%);
+}
+
+.red {
+	font: 700 0.8em 'Inter', sans-serif;
+	color: hsl(356, 69%, 56%);
+}
+
+.card p {
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+/* Overview Today Cards*/
+.overview {
+	padding: 0 150px;
+	margin-top: 0px;
+}
+
+.light-h1 {
+	font: 700 1.5em 'Inter', sans-serif;
+	color: hsl(228, 12%, 44%);
+}
+
+.dark-h1 {
+	font: 700 1.5em 'Inter', sans-serif;
+	color: hsl(0, 0%, 100%);
+}
+
+.overview .card {
+	font: 700 0.8em 'Inter', sans-serif;
+	text-align: left;
+	padding: 20px;
+	max-height: 120px;
+}
+
+.top-right {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.overview span {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	line-height: 2;
+}
+
+.small-h1 {
+	font-size: 2.5em;
+	color: hsl(230, 17%, 14%);
+}
+
+.dark-card .small-h1 {
+	font-size: 2.5em;
+	color: hsl(0, 0%, 100%);
+}
+
+@media screen and (max-width: 375px) {
+	.container {
+		display: flex;
+		justify-content: center;
+		margin-top: -70px;
+	}
+	.overview {
+		padding: 0 35px;
+		margin-top: 0px;
+	}
+	.card {
+		min-width: 300px;
+	}
+}
+
+/* Footer */
+footer {
+	font: 400 1em 'Inter', sans-serif;
+	padding: 20px 0px;
+}
+
+.attribution { 
+	font-size: 11px; 
+	text-align: center; 
+}
+
+.attribution a { 
+	color: hsl(228, 45%, 44%); 
+}
